@@ -9,6 +9,10 @@ class SignIn extends Component {
 		this.setState({ signInEmail: event.target.value })
 	}
 
+	onPasswordChange = (event) => {
+		this.setState({ signInPassword: event.target.value })
+	}
+
 	onSubmitSignIn = () => {
 		fetch('http://localhost:3000/signin', {
 			method: 'post',
@@ -19,15 +23,12 @@ class SignIn extends Component {
 			})
 		})
 			.then(response => response.json())
-			.then(data => {
-				if (data === 'success') {
+			.then(user => {
+				if (user.id) {
+					this.props.loadUser(user);
 					this.props.onRouteChange('home');
 				}
 			})
-	}
-
-	onPasswordChange = (event) => {
-		this.setState({ signInPassword: event.target.value })
 	}
 	render() {
 		const { onRouteChange } = this.props;
