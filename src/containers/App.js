@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Particles from 'react-particles-js';
-import Clarifai from 'clarifai';
 import Logo from '../components/Logo/Logo';
 import Navigation from '../components/Navigation/Navigation';
 import ImageLinkForm from '../components/ImageLinkForm/ImageLinkForm';
@@ -10,18 +9,14 @@ import SignIn from '../components/SignIn/SignIn';
 import Register from '../components/Register/Register';
 import './App.css';
 
-  const app = new Clarifai.App({
-     apiKey: 'bdc0adabf1be4fc5a570cb1550032171'
-    });
-
 
 const particlesOptions = {
   particles: {
     number: {
-      value: 40,
+      value: 65,
       density: {
         enable: true,
-        value_area: 800
+        value_area: 900
       }
     }
   }
@@ -81,13 +76,17 @@ displayFaceBox = (box) => {
   }
   onPictureSubmit = () => {
     this.setState({imageUrl: this.state.input})
-    app.models.predict(
-      Clarifai.FACE_DETECT_MODEL,
-     this.state.input
-     )
+    fetch('https://evening-mesa-37968.herokuapp.com/imageurl', {
+          method: 'post',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({
+            input: this.state.input
+          })
+        })
+    .then(response => response.json())
     .then( response => {
       if (response) {
-        fetch('http://localhost:3000/image', {
+        fetch('https://evening-mesa-37968.herokuapp.com/image', {
           method: 'put',
           headers: {'Content-Type': 'application/json'},
           body: JSON.stringify({
