@@ -5,7 +5,7 @@ const ImageLinkForm = ({ onInputChange, onPictureSubmit }) => {
 	return (
 		<div>
 			<p className='f3'>
-				{'I\'m Magic Brain! I will detect faces in your pictures. Give me a try!'}
+				{'I\'m Smart Brain! I will detect faces in your pictures. Give me a try!'}
 			</p>
 			<div className="center">
 				<div className=" form center pa4 br3 shadow-5">
