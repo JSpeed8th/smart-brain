@@ -1,3 +1,28 @@
+<h1>Smart Brain </h1>
+A fun app where the user can test out our smart brain to see how many faces it can detect within user photographs.
+
+View Live: https://smart-facial-detect.herokuapp.com/
+
+<strong>Demo:</strong>
+- Email: demo@smart.com
+- Password: password
+
+# Technology
+- JavaScript
+- Node.js (version: 8.12.0)
+- Database: PostgresSQL
+
+<strong>Packages:</strong>
+- tachyons
+- react-tilt
+- react-particles-js
+
+<strong>API:</strong>
+- clarifai
+
+
+# Installation
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
