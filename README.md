@@ -1,5 +1,5 @@
 <h1>Smart Brain </h1>
-A fun app where the user can test out our smart brain to see how many faces it can detect within user photographs.
+A fun/dynamic web application which allows users to challenge our Smart Bot to see if she can detect faces within photos.
 
 View Live: https://smart-facial-detect.herokuapp.com/
 
